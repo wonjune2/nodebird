@@ -51,7 +51,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
   res.redirect("/");
 });
 
-rouoter.get("/kakao", passport.authenticate("kakao"));
+router.get("/kakao", passport.authenticate("kakao"));
 
 router.get(
   "/kakao/callback",
