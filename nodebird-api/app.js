@@ -17,7 +17,7 @@ const { addHook } = require("./models/user");
 const app = express();
 passportConfig();
 app.set("port", process.env.PORT || 8002);
-app.set("view engine", html);
+app.set("view engine", "html");
 nunjucks.configure("views", {
   express: app,
   watch: true,
@@ -34,7 +34,7 @@ sequelize
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
-add.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(
   session({
